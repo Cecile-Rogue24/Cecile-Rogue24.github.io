@@ -1,0 +1,385 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Couleurs */
+:root {
+    --primary-blue: #00A6FB;
+    --light-gray: #F2F2F2;
+    --dark-blue: #001f3f;
+    --white: #ffffff;
+    --text-dark: #333;
+    --text-light: #f1f1f1;
+    --border-color: #ddd;
+}
+
+/* En-tête */
+.header {
+    background-color: var(--white);
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed; /* Position fixe */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Pour rester au-dessus */
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between; /* Nom à gauche, nav à droite */
+    align-items: center;
+}
+
+.header-left h1 {
+    color: var(--dark-blue);
+    font-size: 1.5rem;
+}
+
+/* Barre de navigation principale */
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px; /* Espacement entre les liens */
+    flex-wrap: wrap;
+}
+
+.main-nav a {
+    color: var(--dark-blue);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--primary-blue);
+}
+
+/* Section Hero */
+.hero {
+    background-color: var(--white);
+    padding: 100px 0 60px 0; /* Ajout de padding-top pour compenser le header fixe */
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    color: var(--dark-blue);
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.description {
+    margin-bottom: 20px; /* Réduit l'espace avant le bouton */
+    text-align: center;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button.primary {
+    background-color: var(--primary-blue);
+    color: white;
+    margin-top: 10px; /* Espacement entre le texte et le bouton */
+}
+
+.cta-button.primary:hover {
+    background-color: #0088cc;
+}
+
+.hero-image img {
+    border: 3px solid var(--primary-blue);
+}
+
+/* Sections générales */
+.section {
+    padding: 60px 0;
+}
+
+.bg-light {
+    background-color: var(--light-gray);
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: var(--dark-blue);
+}
+
+/* Grid pour les projets */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px; /* Espacement avant le texte/bouton */
+}
+
+.project-card {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-tags {
+    margin: 10px 0;
+}
+
+.tag {
+    background-color: var(--light-gray);
+    color: var(--dark-blue);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-right: 5px;
+}
+
+.project-link {
+    display: inline-block;
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.project-link:hover {
+    background-color: #000c1a;
+}
+
+/* Compétences */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+.skills-column {
+    flex: 1;
+    min-width: 300px; /* Largeur minimale pour une colonne */
+    text-align: center;
+}
+
+.skills-column h3 {
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.skill-category h4 {
+    color: var(--dark-blue);
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.skill-category ul {
+    list-style: none;
+    text-align: left; /* Aligner les listes à gauche dans la catégorie */
+}
+
+.skill-category li {
+    padding: 3px 0;
+}
+
+.skills-column ul {
+    list-style: none;
+    text-align: center; /* Centrer la liste des soft skills */
+}
+
+.skills-column li {
+    padding: 5px 0;
+}
+
+/* Expérience & Certifications */
+.dual-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.content-block {
+    flex: 1;
+    min-width: 300px;
+}
+
+.content-block h2 {
+    text-align: center; /* Centré */
+    margin-bottom: 20px;
+    color: var(--dark-blue);
+}
+
+.experience-item, .certification {
+    background-color: var(--white);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.company, .date {
+    color: #666;
+    font-style: italic;
+}
+
+/* Projets - Texte et Bouton */
+.more-projects-text {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+}
+
+.more-projects-button {
+    display: block;
+    width: 150px; /* Taille fixe pour le rectangle */
+    margin: 0 auto; /* Centrer le bouton */
+    padding: 8px 0; /* Hauteur du rectangle */
+    background-color: var(--white);
+    border: 2px solid var(--dark-blue); /* Bordure de la couleur souhaitée */
+    color: var(--dark-blue);
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.more-projects-button:hover {
+    background-color: var(--dark-blue);
+    color: var(--white);
+}
+
+/* Contact */
+.contact-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-link {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--dark-blue);
+    border: 2px solid var(--dark-blue); /* Bordure de la couleur souhaitée */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-link:hover {
+    background-color: var(--dark-blue);
+    color: var(--white);
+}
+
+/* Pied de page */
+.footer {
+    background-color: var(--dark-blue);
+    color: var(--text-light);
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* --- Responsive Design --- */
+
+@media (max-width: 767px) {
+    .header .container {
+        flex-direction: column; /* Sur mobile, nom et nav se mettent en dessous */
+        gap: 10px;
+    }
+
+    .main-nav ul {
+        justify-content: center; /* Centrer les liens sur mobile */
+    }
+
+    .hero {
+        padding-top: 140px; /* Augmenter le padding-top pour compenser le header empilé */
+    }
+
+    .dual-content {
+        flex-direction: column;
+    }
+
+    .content-block {
+        width: 100%; /* Prendre toute la largeur sur mobile */
+    }
+}
+
+@media (min-width: 768px) {
+    .hero-content {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+    .hero-text {
+        flex: 1;
+    }
+    .hero-image {
+        flex-shrink: 0;
+    }
+
+    .section h2 {
+        font-size: 2.5rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .skills-container {
+        justify-content: space-between; /* Espacer les colonnes sur tablette et PC */
+    }
+
+    .skills-column {
+        flex: 0 1 calc(50% - 20px); /* Deux colonnes égales */
+    }
+}
+
+@media (min-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
